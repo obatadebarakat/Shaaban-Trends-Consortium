@@ -1,0 +1,1256 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Project Portfolio | Shaaban Trends Consults Limited</title>
+    <link rel="icon" href="images/favicon.jpg" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#cc0000",
+              "background-light": "#f8f5f5",
+              "background-dark": "#230f0f",
+            },
+            fontFamily: {
+              display: ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .filter-btn.active {
+        background-color: #cc0000;
+        color: white;
+        border-color: #cc0000;
+      }
+      .project-card {
+        transition:
+          opacity 0.3s ease,
+          transform 0.3s ease;
+      }
+      .project-card.hidden-by-filter {
+        display: none;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display"
+  >
+    <!-- Header / Navigation -->
+    <header
+      class="sticky top-0 z-50 bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-primary/10 px-4 md:px-10 lg:px-40 py-4"
+    >
+      <div class="flex items-center justify-between max-w-[1280px] mx-auto">
+        <a href="index.html" class="flex items-center gap-3">
+          <img
+            src="images/stc_logo.jpg"
+            alt="Shaaban Trends Consults Limited"
+            class="h-12 w-auto"
+          />
+        </a>
+        <nav class="hidden md:flex items-center gap-8">
+          <a
+            class="text-slate-700 dark:text-slate-300 text-sm font-semibold hover:text-primary transition-colors"
+            href="index.html"
+            >Home</a
+          >
+          <a
+            class="text-slate-700 dark:text-slate-300 text-sm font-semibold hover:text-primary transition-colors"
+            href="about.html"
+            >About</a
+          >
+          <a
+            class="text-slate-700 dark:text-slate-300 text-sm font-semibold hover:text-primary transition-colors"
+            href="services.html"
+            >Services</a
+          >
+          <a
+            class="text-primary text-sm font-semibold border-b-2 border-primary pb-1"
+            href="projects.html"
+            >Portfolio</a
+          >
+          <a
+            class="text-slate-700 dark:text-slate-300 text-sm font-semibold hover:text-primary transition-colors"
+            href="contact.html"
+            >Contact</a
+          >
+        </nav>
+        <!-- Mobile Menu Button -->
+        <button
+          id="mobile-menu-btn"
+          class="md:hidden text-slate-900 dark:text-slate-100 p-2"
+        >
+          <span class="material-symbols-outlined text-2xl">menu</span>
+        </button>
+        <!-- Desktop Request Quote -->
+        <a
+          href="contact.html"
+          class="hidden md:block bg-primary hover:bg-red-700 text-white px-6 py-2.5 rounded-lg text-sm font-bold transition-all shadow-lg shadow-primary/20"
+        >
+          Request Quote
+        </a>
+      </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 z-[100] bg-white dark:bg-background-dark p-6 translate-x-full transition-transform duration-300 md:hidden"
+    >
+      <div class="flex justify-between items-center mb-10">
+        <a href="index.html" class="flex items-center gap-3">
+          <img
+            src="images/favicon.jpg"
+            alt="STC"
+            class="h-10 w-10 rounded shadow-md"
+          />
+          <h2 class="text-slate-900 dark:text-slate-100 text-lg font-extrabold">
+            STC <span class="text-primary">Limited</span>
+          </h2>
+        </a>
+        <button
+          id="close-menu-btn"
+          class="text-slate-900 dark:text-slate-100 p-2"
+        >
+          <span class="material-symbols-outlined text-2xl">close</span>
+        </button>
+      </div>
+      <nav class="flex flex-col gap-6">
+        <a
+          href="index.html"
+          class="text-xl font-bold hover:text-primary transition-colors border-b border-slate-100 dark:border-slate-800 pb-2"
+          >Home</a
+        >
+        <a
+          href="about.html"
+          class="text-xl font-bold hover:text-primary transition-colors border-b border-slate-100 dark:border-slate-800 pb-2"
+          >About Us</a
+        >
+        <a
+          href="services.html"
+          class="text-xl font-bold hover:text-primary transition-colors border-b border-slate-100 dark:border-slate-800 pb-2"
+          >Our Services</a
+        >
+        <a
+          href="projects.html"
+          class="text-xl font-bold hover:text-primary transition-colors border-b border-slate-100 dark:border-slate-800 pb-2 text-primary"
+          >Project Portfolio</a
+        >
+        <a
+          href="contact.html"
+          class="text-xl font-bold hover:text-primary transition-colors border-b border-slate-100 dark:border-slate-800 pb-2"
+          >Contact Us</a
+        >
+      </nav>
+      <div class="mt-12">
+        <a
+          href="contact.html"
+          class="block w-full text-center bg-primary text-white py-4 rounded-xl font-bold shadow-lg shadow-primary/20"
+          >Request Quote</a
+        >
+      </div>
+    </div>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="relative h-[50vh] md:h-[60vh] w-full overflow-hidden">
+        <div
+          class="absolute inset-0 bg-cover bg-center"
+          style="
+            background-image:
+              linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.75)),
+              url(&quot;images/proj4.jpg&quot;);
+          "
+        ></div>
+        <div
+          class="relative h-full flex flex-col items-start justify-end px-4 md:px-10 lg:px-40 pb-16 max-w-[1280px] mx-auto"
+        >
+          <div class="flex items-center gap-2 mb-6">
+            <a
+              class="text-white/70 text-sm font-medium hover:text-white transition-colors"
+              href="index.html"
+              >Home</a
+            >
+            <span class="text-white/40 text-sm">/</span>
+            <span class="text-white text-sm font-semibold"
+              >Project Portfolio</span
+            >
+          </div>
+          <span
+            class="bg-primary/90 text-white text-xs font-bold uppercase tracking-[0.2em] px-4 py-1 rounded mb-4"
+            >500+ Projects Delivered</span
+          >
+          <h1
+            class="text-white text-4xl md:text-6xl font-black leading-tight tracking-tighter mb-4"
+          >
+            Our Work &amp; Legacy
+          </h1>
+          <p
+            class="text-white/80 text-lg md:text-xl font-medium max-w-2xl leading-relaxed"
+          >
+            Over three decades of Education, Health, Commercial, Design, and
+            Construction Development Programs of International Standard.
+          </p>
+        </div>
+      </section>
+
+      <!-- Stats Bar -->
+      <section
+        class="bg-white dark:bg-background-dark border-b border-slate-100 dark:border-slate-800 px-4 md:px-10 lg:px-40 py-6"
+      >
+        <div
+          class="max-w-[1280px] mx-auto flex flex-wrap items-center justify-between gap-6"
+        >
+          <div class="flex items-center gap-8 flex-wrap">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-2xl"
+                >domain</span
+              >
+              <div>
+                <p class="text-2xl font-black text-primary">500+</p>
+                <p
+                  class="text-xs uppercase tracking-widest text-slate-500 font-bold"
+                >
+                  Projects Built
+                </p>
+              </div>
+            </div>
+            <div
+              class="w-px h-10 bg-slate-200 dark:bg-slate-700 hidden sm:block"
+            ></div>
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-2xl"
+                >category</span
+              >
+              <div>
+                <p class="text-2xl font-black text-primary">6</p>
+                <p
+                  class="text-xs uppercase tracking-widest text-slate-500 font-bold"
+                >
+                  Sectors
+                </p>
+              </div>
+            </div>
+            <div
+              class="w-px h-10 bg-slate-200 dark:bg-slate-700 hidden sm:block"
+            ></div>
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-2xl"
+                >history</span
+              >
+              <div>
+                <p class="text-2xl font-black text-primary">30+</p>
+                <p
+                  class="text-xs uppercase tracking-widest text-slate-500 font-bold"
+                >
+                  Years
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Filter Tabs -->
+      <section
+        class="hidden md:block sticky top-[73px] z-40 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm border-b border-slate-200 dark:border-slate-800 px-4 md:px-10 lg:px-40 py-4"
+      >
+        <div
+          class="max-w-[1280px] mx-auto flex flex-wrap gap-3"
+          id="filter-tabs"
+        >
+          <button
+            class="filter-btn active px-5 py-2 rounded-full text-sm font-bold border border-slate-200 dark:border-slate-700 transition-all hover:border-primary"
+            data-filter="all"
+          >
+            All Projects
+          </button>
+          <button
+            class="filter-btn px-5 py-2 rounded-full text-sm font-bold border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 transition-all hover:border-primary"
+            data-filter="education"
+          >
+            Education &amp; Government
+          </button>
+          <button
+            class="filter-btn px-5 py-2 rounded-full text-sm font-bold border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 transition-all hover:border-primary"
+            data-filter="institutional"
+          >
+            Institutional
+          </button>
+          <button
+            class="filter-btn px-5 py-2 rounded-full text-sm font-bold border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 transition-all hover:border-primary"
+            data-filter="commercial"
+          >
+            Commercial
+          </button>
+          <button
+            class="filter-btn px-5 py-2 rounded-full text-sm font-bold border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 transition-all hover:border-primary"
+            data-filter="residential"
+          >
+            Residential
+          </button>
+          <button
+            class="filter-btn px-5 py-2 rounded-full text-sm font-bold border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 transition-all hover:border-primary"
+            data-filter="interior"
+          >
+            Interior &amp; Landscape
+          </button>
+        </div>
+      </section>
+
+      <!-- ======================================================= -->
+      <!--  SECTION 1: Education & Government                       -->
+      <!-- ======================================================= -->
+      <section
+        id="institutional"
+        class="py-20 px-4 md:px-10 lg:px-40 bg-white dark:bg-background-dark"
+      >
+        <div class="max-w-[1280px] mx-auto">
+          <div class="mb-12">
+            <h2
+              class="text-primary text-sm font-bold uppercase tracking-[0.2em] mb-3"
+            >
+              Education &amp; Government
+            </h2>
+            <h3
+              class="text-slate-900 dark:text-slate-100 text-3xl md:text-4xl font-black leading-tight"
+            >
+              Building the Future of Learning
+            </h3>
+            <p
+              class="text-slate-500 dark:text-slate-400 text-lg mt-4 max-w-3xl"
+            >
+              Our firm has participated in Education, Health and Commercial,
+              Design, Construction Development Programs of International
+              Standard.
+            </p>
+          </div>
+
+          <!-- Featured: Millennium Secondary School -->
+          <div
+            class="project-card group relative overflow-hidden rounded-2xl h-[500px] mb-8"
+            data-category="education"
+          >
+            <img
+              alt="Millennium Secondary School for Oyo State Government"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              src="images/proj2.jpg"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-8 md:p-12 flex flex-col justify-end"
+            >
+              <span
+                class="text-primary text-xs font-bold uppercase tracking-widest mb-2"
+                >Education / Government</span
+              >
+              <h4 class="text-white text-3xl md:text-4xl font-black mb-3">
+                Millennium Secondary School
+              </h4>
+              <p class="text-white/80 text-base max-w-2xl mb-4">
+                A flagship institutional project designed and executed for the
+                Oyo State Government. This large-scale educational
+                infrastructure showcases our expertise in projects of
+                international standard.
+              </p>
+              <div class="flex items-center gap-4">
+                <span
+                  class="bg-primary/20 text-primary border border-primary/30 text-xs font-bold px-3 py-1 rounded-full"
+                  >Completed</span
+                >
+                <span class="flex items-center gap-1 text-white/60 text-sm">
+                  <span class="material-symbols-outlined text-sm"
+                    >location_on</span
+                  >
+                  Oyo State, Nigeria
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Education Sub-grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- proj1: 3D Render of School -->
+            <div
+              class="project-card group relative overflow-hidden rounded-2xl h-[380px]"
+              data-category="education"
+            >
+              <img
+                alt="3D architectural render of school complex"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                src="images/proj1.jpg"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-6 flex flex-col justify-end"
+              >
+                <span
+                  class="text-primary text-xs font-bold uppercase tracking-widest mb-1"
+                  >Education</span
+                >
+                <h4 class="text-white text-xl font-bold">
+                  School Complex — 3D Design
+                </h4>
+                <p
+                  class="text-white/70 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                  Architectural visualization for educational building design
+                </p>
+              </div>
+            </div>
+
+            <!-- proj5: Health/Institutional Center 3D -->
+            <div
+              class="project-card group relative overflow-hidden rounded-2xl h-[380px]"
+              data-category="education"
+            >
+              <img
+                alt="3D render of institutional health center"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                src="images/proj5.jpg"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-6 flex flex-col justify-end"
+              >
+                <span
+                  class="text-primary text-xs font-bold uppercase tracking-widest mb-1"
+                  >Health / Government</span
+                >
+                <h4 class="text-white text-xl font-bold">
+                  Health &amp; Institutional Center
+                </h4>
+                <p
+                  class="text-white/70 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                  3D architectural rendering of healthcare facility design
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================= -->
+      <!--  SECTION 2: Institutional Buildings                      -->
+      <!-- ======================================================= -->
+      <section
+        id="institutional"
+        class="py-20 px-4 md:px-10 lg:px-40 bg-background-light dark:bg-slate-900/50"
+      >
+        <div class="max-w-[1280px] mx-auto">
+          <div class="mb-12">
+            <h2
+              class="text-primary text-sm font-bold uppercase tracking-[0.2em] mb-3"
+            >
+              Institutional Buildings
+            </h2>
+            <h3
+              class="text-slate-900 dark:text-slate-100 text-3xl md:text-4xl font-black leading-tight"
+            >
+              Large-Scale Institutional Expertise
+            </h3>
+            <p
+              class="text-slate-500 dark:text-slate-400 text-lg mt-4 max-w-3xl"
+            >
+              Our experiences have also been across big institutional buildings
+              that have been completed and put to use. These have involved using
+              creative, efficient and safest creative working experiences.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- proj4: Completed institutional campus -->
+            <div
+              class="project-card group relative overflow-hidden rounded-2xl h-[400px]"
+              data-category="institutional"
+            >
+              <img
+                alt="Completed institutional campus building"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                src="images/proj4.jpg"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-6 flex flex-col justify-end"
+              >
+                <span
+                  class="text-primary text-xs font-bold uppercase tracking-widest mb-1"
+                  >Institutional</span
+                >
+                <h4 class="text-white text-xl font-bold">
+                  Institutional Campus
+                </h4>
+                <p
+                  class="text-white/70 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                  Completed institutional facility with modern design
+                </p>
+              </div>
+            </div>
+
+            <!-- proj3: Modern glass building / landscape -->
+            <div
+              class="project-card group relative overflow-hidden rounded-2xl h-[400px]"
+              data-category="institutional"
+            >
+              <img
+                alt="Modern glass institutional building with landscaping"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                src="images/proj3.jpg"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-6 flex flex-col justify-end"
+              >
+                <span
+                  class="text-primary text-xs font-bold uppercase tracking-widest mb-1"
+                  >Institutional</span
+                >
+                <h4 class="text-white text-xl font-bold">
+                  Modern Glass Complex
+                </h4>
+                <p
+                  class="text-white/70 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                  Urban planning with creative landscaping integration
+                </p>
+              </div>
+            </div>
+
+            <!-- project-institutional.jpg: Large institutional -->
+            <div
+              class="project-card group relative overflow-hidden rounded-2xl h-[400px]"
+              data-category="institutional"
+            >
+              <img
+                alt="Large institutional building complex"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                src="images/project-institutional.jpg"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-6 flex flex-col justify-end"
+              >
+                <span
+                  class="text-primary text-xs font-bold uppercase tracking-widest mb-1"
+                  >Institutional</span
+                >
+                <h4 class="text-white text-xl font-bold">
+                  Completed Institutional Facility
+                </h4>
+                <p
+                  class="text-white/70 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                  Built with creative, efficient and safest practices
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================= -->
+      <!--  SECTION 3: Commercial Projects                          -->
+      <!-- ======================================================= -->
+      <section
+        id="commercial"
+        class="py-20 px-4 md:px-10 lg:px-40 bg-white dark:bg-background-dark"
+      >
+        <div class="max-w-[1280px] mx-auto">
+          <div class="mb-12">
+            <h2
+              class="text-primary text-sm font-bold uppercase tracking-[0.2em] mb-3"
+            >
+              Commercial
+            </h2>
+            <h3
+              class="text-slate-900 dark:text-slate-100 text-3xl md:text-4xl font-black leading-tight"
+            >
+              Commercial &amp; Corporate Projects
+            </h3>
+            <p
+              class="text-slate-500 dark:text-slate-400 text-lg mt-4 max-w-3xl"
+            >
+              Also worthy of mentioning are designs and constructions of
+              commercial projects for private and corporate organizations. Our
+              services are packaged by our highly motivated staff where designs,
+              constructions and supervision are achieved through the experience
+              of our principal partners under government services.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- proj7: Petrol Station / Commercial -->
+            <div
+              class="project-card group relative overflow-hidden rounded-2xl h-[400px]"
+              data-category="commercial"
+            >
+              <img
+                alt="Commercial petrol station building"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                src="images/proj7.jpg"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-6 flex flex-col justify-end"
+              >
+                <span
+                  class="text-primary text-xs font-bold uppercase tracking-widest mb-1"
+                  >Commercial</span
+                >
+                <h4 class="text-white text-2xl font-bold">
+                  Commercial Complex
+                </h4>
+                <p class="text-white/70 text-sm mt-2">
+                  Designs for private and corporate organizations
+                </p>
+              </div>
+            </div>
+
+            <!-- proj6: Timber structure / Construction -->
+            <div
+              class="project-card group relative overflow-hidden rounded-2xl h-[400px]"
+              data-category="commercial"
+            >
+              <img
+                alt="Timber roof structure and construction work"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                src="images/proj6.jpg"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-6 flex flex-col justify-end"
+              >
+                <span
+                  class="text-primary text-xs font-bold uppercase tracking-widest mb-1"
+                  >Construction</span
+                >
+                <h4 class="text-white text-2xl font-bold">
+                  Structural Construction
+                </h4>
+                <p class="text-white/70 text-sm mt-2">
+                  Timber roofing and structural construction expertise
+                </p>
+              </div>
+            </div>
+
+            <!-- project-commercial.jpg -->
+            <div
+              class="project-card md:col-span-2 group relative overflow-hidden rounded-2xl h-[450px]"
+              data-category="commercial"
+            >
+              <img
+                alt="Large commercial project"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                src="images/project-commercial.jpg"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-8 md:p-12 flex flex-col justify-end"
+              >
+                <span
+                  class="text-primary text-xs font-bold uppercase tracking-widest mb-2"
+                  >Commercial</span
+                >
+                <h4 class="text-white text-3xl font-black mb-3">
+                  Private &amp; Corporate Organizations
+                </h4>
+                <p class="text-white/80 text-base max-w-2xl">
+                  Dynamic commercial hubs and corporate spaces designed for
+                  modern businesses, built with precision and extensive industry
+                  experience.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================= -->
+      <!--  SECTION 4: Residential — Private Designs @ Ajah Lagos   -->
+      <!-- ======================================================= -->
+      <section
+        id="residential"
+        class="py-20 px-4 md:px-10 lg:px-40 bg-background-light dark:bg-slate-900/50"
+      >
+        <div class="max-w-[1280px] mx-auto">
+          <div class="mb-12">
+            <h2
+              class="text-primary text-sm font-bold uppercase tracking-[0.2em] mb-3"
+            >
+              Residential
+            </h2>
+            <h3
+              class="text-slate-900 dark:text-slate-100 text-3xl md:text-4xl font-black leading-tight"
+            >
+              Private Designs &amp; Residences
+            </h3>
+            <p
+              class="text-slate-500 dark:text-slate-400 text-lg mt-4 max-w-3xl"
+            >
+              Designs construction of projects for individuals with their
+              landscape and interior decoration works. Custom luxury housing
+              tailored to individual lifestyle and comfort.
+            </p>
+          </div>
+
+          <!-- Featured: Private Designs @ Ajah, Lagos -->
+          <div
+            class="project-card group relative overflow-hidden rounded-2xl h-[500px] mb-8"
+            data-category="residential"
+          >
+            <img
+              alt="Private Designs at Ajah Lagos — residential construction"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              src="images/proj12.jpg"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-8 md:p-12 flex flex-col justify-end"
+            >
+              <span
+                class="text-primary text-xs font-bold uppercase tracking-widest mb-2"
+                >Residential</span
+              >
+              <h4 class="text-white text-3xl md:text-4xl font-black mb-3">
+                Private Designs @ Ajah, Lagos
+              </h4>
+              <p class="text-white/80 text-base max-w-2xl mb-4">
+                Custom luxury residential design and construction for individual
+                clients. Featuring modern architectural finishes, landscape
+                integration, and premium interior solutions.
+              </p>
+              <div class="flex items-center gap-4">
+                <span
+                  class="bg-primary/20 text-primary border border-primary/30 text-xs font-bold px-3 py-1 rounded-full"
+                  >Completed</span
+                >
+                <span class="flex items-center gap-1 text-white/60 text-sm">
+                  <span class="material-symbols-outlined text-sm"
+                    >location_on</span
+                  >
+                  Ajah, Lagos, Nigeria
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Residential grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div
+              class="project-card group relative overflow-hidden rounded-2xl h-[380px]"
+              data-category="residential"
+            >
+              <img
+                alt="Residential project design"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                src="images/project-residential.jpg"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-6 flex flex-col justify-end"
+              >
+                <span
+                  class="text-primary text-xs font-bold uppercase tracking-widest mb-1"
+                  >Residential</span
+                >
+                <h4 class="text-white text-xl font-bold">
+                  Modern Private Residence
+                </h4>
+                <p
+                  class="text-white/70 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                  Contemporary residential design with premium finishes
+                </p>
+              </div>
+            </div>
+            <div
+              class="project-card group relative overflow-hidden rounded-2xl h-[380px]"
+              data-category="residential"
+            >
+              <img
+                alt="Educational building project"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                src="images/project-education.jpg"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-6 flex flex-col justify-end"
+              >
+                <span
+                  class="text-primary text-xs font-bold uppercase tracking-widest mb-1"
+                  >Mixed Use</span
+                >
+                <h4 class="text-white text-xl font-bold">
+                  Mixed-Use Development
+                </h4>
+                <p
+                  class="text-white/70 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                  Multi-storey building for residential and commercial use
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================= -->
+      <!--  SECTION 5: Interior Design & Landscape                  -->
+      <!-- ======================================================= -->
+      <section
+        class="py-20 px-4 md:px-10 lg:px-40 bg-white dark:bg-background-dark"
+      >
+        <div class="max-w-[1280px] mx-auto">
+          <div class="mb-12">
+            <h2
+              class="text-primary text-sm font-bold uppercase tracking-[0.2em] mb-3"
+            >
+              Interior &amp; Landscape
+            </h2>
+            <h3
+              class="text-slate-900 dark:text-slate-100 text-3xl md:text-4xl font-black leading-tight"
+            >
+              Interior Decoration &amp; Creative Landscaping
+            </h3>
+            <p
+              class="text-slate-500 dark:text-slate-400 text-lg mt-4 max-w-3xl"
+            >
+              High-end interior styling, finishings, bespoke furniture
+              arrangements, and creative landscaping with our expertise in Urban
+              Planning and Cityscape Design.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <!-- proj8: Modern dining/living interior -->
+            <div
+              class="project-card group relative overflow-hidden rounded-2xl h-[350px]"
+              data-category="interior"
+            >
+              <img
+                alt="Modern interior dining area design"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                src="images/proj8.jpg"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              >
+                <span
+                  class="text-primary text-xs font-bold uppercase tracking-widest mb-1"
+                  >Interior</span
+                >
+                <h4 class="text-white text-xl font-bold">
+                  Modern Dining &amp; Living Area
+                </h4>
+                <p class="text-white/70 text-sm mt-1">
+                  Elegant interior styling with premium wall finishes
+                </p>
+              </div>
+            </div>
+
+            <!-- proj10: Bedroom with red wall -->
+            <div
+              class="project-card group relative overflow-hidden rounded-2xl h-[350px]"
+              data-category="interior"
+            >
+              <img
+                alt="Bedroom interior design with red accent wall"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                src="images/proj10.jpg"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              >
+                <span
+                  class="text-primary text-xs font-bold uppercase tracking-widest mb-1"
+                  >Interior</span
+                >
+                <h4 class="text-white text-xl font-bold">
+                  Bedroom Interior Design
+                </h4>
+                <p class="text-white/70 text-sm mt-1">
+                  Premium bedroom styling with bold accent walls
+                </p>
+              </div>
+            </div>
+
+            <!-- proj11: Luxury living room -->
+            <div
+              class="project-card group relative overflow-hidden rounded-2xl h-[350px]"
+              data-category="interior"
+            >
+              <img
+                alt="Luxury living room interior decoration"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                src="images/proj11.jpg"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              >
+                <span
+                  class="text-primary text-xs font-bold uppercase tracking-widest mb-1"
+                  >Interior</span
+                >
+                <h4 class="text-white text-xl font-bold">Luxury Living Room</h4>
+                <p class="text-white/70 text-sm mt-1">
+                  High-end decoration with bespoke furniture
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Landscape Feature -->
+          <div
+            class="project-card group relative overflow-hidden rounded-2xl h-[400px]"
+            data-category="interior"
+          >
+            <img
+              alt="Creative landscaped garden with colourful flowers"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              src="images/proj9.jpg"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-8 md:p-12 flex flex-col justify-end"
+            >
+              <span
+                class="text-primary text-xs font-bold uppercase tracking-widest mb-2"
+                >Landscape</span
+              >
+              <h4 class="text-white text-3xl font-black mb-3">
+                Creative Landscaping
+              </h4>
+              <p class="text-white/80 text-base max-w-2xl">
+                Our Urban Planning and Creative Landscaping expertise brings
+                outdoor spaces to life with vibrant garden designs, hardscape
+                features, and harmonious natural environments.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Philosophy Banner -->
+      <section
+        class="bg-primary text-white py-16 px-4 md:px-10 lg:px-40 overflow-hidden relative"
+      >
+        <div class="absolute top-0 right-0 opacity-10">
+          <span class="material-symbols-outlined text-[250px]"
+            >architecture</span
+          >
+        </div>
+        <div class="max-w-[1280px] mx-auto relative z-10 text-center">
+          <h2
+            class="text-white/80 text-sm font-bold uppercase tracking-[0.2em] mb-6"
+          >
+            Our Approach
+          </h2>
+          <h3
+            class="text-3xl md:text-4xl font-black leading-tight mb-6 max-w-3xl mx-auto"
+          >
+            Creative, Efficient &amp; Safest Working Experiences
+          </h3>
+          <p class="text-white/80 text-lg max-w-2xl mx-auto leading-relaxed">
+            Our services are packaged by our highly motivated staff. Designs,
+            constructions, and supervision are achieved through the experience
+            of our principal partners across government and private
+            institutional services.
+          </p>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section
+        class="py-20 px-4 md:px-10 lg:px-40 bg-white dark:bg-background-dark"
+      >
+        <div
+          class="max-w-[1280px] mx-auto bg-slate-900 rounded-3xl p-10 md:p-20 text-center relative overflow-hidden"
+        >
+          <div
+            class="absolute inset-0 opacity-20 bg-cover bg-center"
+            style="background-image: url(&quot;images/proj5.jpg&quot;)"
+          ></div>
+          <div class="relative z-10">
+            <h2 class="text-white text-4xl md:text-5xl font-black mb-6">
+              Start Your Project Today
+            </h2>
+            <p class="text-white/70 text-lg mb-10 max-w-2xl mx-auto">
+              Whether it's an educational facility, a commercial hub, a private
+              residence, or interior works — our 30+ years of experience
+              guarantee excellence.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="index.html#contact"
+                class="bg-primary hover:bg-red-700 text-white px-10 py-4 rounded-lg font-bold text-lg shadow-xl shadow-primary/20 transition-all"
+              >
+                Get a Free Quote
+              </a>
+              <a
+                href="about.html"
+                class="bg-transparent border border-white/30 hover:bg-white/10 text-white px-10 py-4 rounded-lg font-bold text-lg transition-all"
+              >
+                Learn About Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="bg-background-light dark:bg-background-dark py-12 px-4 md:px-10 lg:px-40 border-t border-slate-200 dark:border-slate-800"
+    >
+      <div
+        class="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12"
+      >
+        <div class="col-span-1 lg:col-span-1">
+          <a href="index.html" class="flex items-center gap-3 mb-6">
+            <img
+              src="images/favicon.jpg"
+              alt="STC"
+              class="h-10 w-10 rounded shadow-sm"
+            />
+            <h2
+              class="text-slate-900 dark:text-slate-100 text-lg font-extrabold leading-tight"
+            >
+              Shaaban Trends
+            </h2>
+          </a>
+          <p class="text-slate-500 text-sm leading-relaxed mb-6">
+            Delivering architectural excellence and innovation for over 30
+            years. From initial design to final execution.
+          </p>
+        </div>
+        <div>
+          <a href="index.html" class="hover:text-primary transition-colors">
+            <h4 class="font-bold mb-6 text-slate-900 dark:text-slate-100">
+              Quick Links
+            </h4>
+          </a>
+          <ul class="flex flex-col gap-4 text-sm text-slate-500">
+            <li>
+              <a class="hover:text-primary transition-colors" href="index.html"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a class="hover:text-primary transition-colors" href="about.html"
+                >About Firm</a
+              >
+            </li>
+            <li>
+              <a
+                class="hover:text-primary transition-colors"
+                href="services.html"
+                >Our Services</a
+              >
+            </li>
+            <li>
+              <a
+                class="hover:text-primary transition-colors"
+                href="projects.html"
+                >Portfolio</a
+              >
+            </li>
+            <li>
+              <a
+                class="hover:text-primary transition-colors"
+                href="contact.html"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <a href="services.html" class="hover:text-primary transition-colors">
+            <h4 class="font-bold mb-6 text-slate-900 dark:text-slate-100">
+              Services
+            </h4>
+          </a>
+          <ul class="flex flex-col gap-4 text-sm text-slate-500">
+            <li>
+              <a
+                href="services.html#architectural-design"
+                class="hover:text-primary transition-colors"
+                >Architectural Design</a
+              >
+            </li>
+            <li>
+              <a
+                href="services.html#construction-execution"
+                class="hover:text-primary transition-colors"
+                >Construction &amp; Contract Execution</a
+              >
+            </li>
+            <li>
+              <a
+                href="services.html#project-supervision"
+                class="hover:text-primary transition-colors"
+                >Project Monitoring &amp; Supervision</a
+              >
+            </li>
+            <li>
+              <a
+                href="services.html#landscape-architecture"
+                class="hover:text-primary transition-colors"
+                >Landscape Architecture &amp; Urban Planning</a
+              >
+            </li>
+            <li>
+              <a
+                href="services.html#interior-decoration"
+                class="hover:text-primary transition-colors"
+                >Interior Decoration</a
+              >
+            </li>
+            <li>
+              <a
+                href="services.html#consultancy-services"
+                class="hover:text-primary transition-colors"
+                >Consultancy Services</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <a
+            href="https://www.google.com/maps/search/Shaaban+Trends+Consults+Limited+Ibadan+Nigeria"
+            target="_blank"
+            class="group block"
+          >
+            <h4
+              class="font-bold mb-6 text-slate-900 dark:text-slate-100 group-hover:text-primary transition-colors"
+            >
+              Location
+            </h4>
+            <div
+              class="flex items-start gap-3 text-sm text-slate-500 group-hover:text-primary transition-all"
+            >
+              <span
+                class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform"
+                >location_on</span
+              >
+              <p class="group-hover:translate-x-1 transition-transform">
+                Headquarters Operations,<br />Ibadan, Nigeria
+              </p>
+            </div>
+          </a>
+          <div class="mt-6 flex items-center gap-4">
+            <a
+              class="size-10 bg-slate-200 dark:bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-lg">language</span>
+            </a>
+            <a
+              class="size-10 bg-slate-200 dark:bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-lg">mail</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="max-w-[1280px] mx-auto mt-12 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6"
+      >
+        <p class="text-xs text-slate-400">
+          &copy; 2024 Shaaban Trends Consults Limited. All Rights Reserved.
+        </p>
+        <div class="flex gap-8 text-xs text-slate-400">
+          <a class="hover:text-primary" href="#">Privacy Policy</a>
+          <a class="hover:text-primary" href="#">Terms of Service</a>
+        </div>
+      </div>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+          const closeMenuBtn = document.getElementById("close-menu-btn");
+          const mobileMenu = document.getElementById("mobile-menu");
+
+          if (mobileMenuBtn && closeMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener("click", () => {
+              mobileMenu.classList.remove("translate-x-full");
+            });
+
+            closeMenuBtn.addEventListener("click", () => {
+              mobileMenu.classList.add("translate-x-full");
+            });
+
+            // Close menu when clicking on a link
+            const mobileLinks = mobileMenu.querySelectorAll("nav a");
+            mobileLinks.forEach((link) => {
+              link.addEventListener("click", () => {
+                mobileMenu.classList.add("translate-x-full");
+              });
+            });
+          }
+
+          const filterBtns = document.querySelectorAll(".filter-btn");
+          const projectCards = document.querySelectorAll(".project-card");
+
+          filterBtns.forEach((btn) => {
+            btn.addEventListener("click", function () {
+              filterBtns.forEach((b) => b.classList.remove("active"));
+              this.classList.add("active");
+
+              const filter = this.dataset.filter;
+
+              projectCards.forEach((card) => {
+                if (filter === "all" || card.dataset.category === filter) {
+                  card.classList.remove("hidden-by-filter");
+                } else {
+                  card.classList.add("hidden-by-filter");
+                }
+              });
+            });
+          });
+
+          // Automatic hash-based filtering
+          const hash = window.location.hash.replace("#", "");
+          if (hash) {
+            const targetBtn = Array.from(filterBtns).find(
+              (btn) => btn.dataset.filter === hash,
+            );
+            if (targetBtn) {
+              targetBtn.click();
+              // Smooth scroll to the projects grid top if coming from a different section
+              const filterContainer = document.querySelector(".filter-btn")
+                ? document.querySelector(".filter-btn").parentElement
+                : null;
+              if (filterContainer) {
+                filterContainer.scrollIntoView({ behavior: "smooth" });
+              }
+            }
+          }
+        });
+      </script>
+    </footer>
+  </body>
+</html>

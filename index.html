@@ -1,0 +1,818 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Shaaban Trends Consults Limited | Architectural Excellence</title>
+    <link rel="icon" href="images/favicon.jpg" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#cc0000",
+              "background-light": "#f8f5f5",
+              "background-dark": "#230f0f",
+            },
+            fontFamily: {
+              display: ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display"
+  >
+    <!-- Header / Navigation -->
+    <header
+      class="sticky top-0 z-50 bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-primary/10 px-4 md:px-10 lg:px-40 py-4"
+    >
+      <div class="flex items-center justify-between max-w-[1280px] mx-auto">
+        <a href="index.html" class="flex items-center gap-3">
+          <img
+            src="images/stc_logo.jpg"
+            alt="Shaaban Trends Consults Limited"
+            class="h-12 w-auto"
+          />
+        </a>
+        <nav class="hidden md:flex items-center gap-8">
+          <a
+            class="text-slate-700 dark:text-slate-300 text-sm font-semibold hover:text-primary transition-colors"
+            href="#"
+            >Home</a
+          >
+          <a
+            class="text-slate-700 dark:text-slate-300 text-sm font-semibold hover:text-primary transition-colors"
+            href="about.html"
+            >About</a
+          >
+          <a
+            class="text-slate-700 dark:text-slate-300 text-sm font-semibold hover:text-primary transition-colors"
+            href="services.html"
+            >Services</a
+          >
+          <a
+            class="text-slate-700 dark:text-slate-300 text-sm font-semibold hover:text-primary transition-colors"
+            href="projects.html"
+            >Portfolio</a
+          >
+          <a
+            class="text-slate-700 dark:text-slate-300 text-sm font-semibold hover:text-primary transition-colors"
+            href="contact.html"
+            >Contact</a
+          >
+        </nav>
+        <!-- Mobile Menu Button -->
+        <button
+          id="mobile-menu-btn"
+          class="md:hidden text-slate-900 dark:text-slate-100 p-2"
+        >
+          <span class="material-symbols-outlined text-2xl">menu</span>
+        </button>
+        <!-- Desktop Request Quote -->
+        <a
+          href="contact.html"
+          class="hidden md:block bg-primary hover:bg-red-700 text-white px-6 py-2.5 rounded-lg text-sm font-bold transition-all shadow-lg shadow-primary/20"
+        >
+          Request Quote
+        </a>
+      </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 z-[100] bg-white dark:bg-background-dark p-6 translate-x-full transition-transform duration-300 md:hidden"
+    >
+      <div class="flex justify-between items-center mb-10">
+        <a href="index.html" class="flex items-center gap-3">
+          <img
+            src="images/favicon.jpg"
+            alt="STC"
+            class="h-10 w-10 rounded shadow-md"
+          />
+          <h2 class="text-slate-900 dark:text-slate-100 text-lg font-extrabold">
+            STC <span class="text-primary">Limited</span>
+          </h2>
+        </a>
+        <button
+          id="close-menu-btn"
+          class="text-slate-900 dark:text-slate-100 p-2"
+        >
+          <span class="material-symbols-outlined text-2xl">close</span>
+        </button>
+      </div>
+      <nav class="flex flex-col gap-6">
+        <a
+          href="index.html"
+          class="text-xl font-bold hover:text-primary transition-colors border-b border-slate-100 dark:border-slate-800 pb-2"
+          >Home</a
+        >
+        <a
+          href="about.html"
+          class="text-xl font-bold hover:text-primary transition-colors border-b border-slate-100 dark:border-slate-800 pb-2"
+          >About Us</a
+        >
+        <a
+          href="services.html"
+          class="text-xl font-bold hover:text-primary transition-colors border-b border-slate-100 dark:border-slate-800 pb-2"
+          >Our Services</a
+        >
+        <a
+          href="projects.html"
+          class="text-xl font-bold hover:text-primary transition-colors border-b border-slate-100 dark:border-slate-800 pb-2"
+          >Project Portfolio</a
+        >
+        <a
+          href="contact.html"
+          class="text-xl font-bold hover:text-primary transition-colors border-b border-slate-100 dark:border-slate-800 pb-2"
+          >Contact Us</a
+        >
+      </nav>
+      <div class="mt-12">
+        <a
+          href="contact.html"
+          class="block w-full text-center bg-primary text-white py-4 rounded-xl font-bold shadow-lg shadow-primary/20"
+          >Request Quote</a
+        >
+      </div>
+    </div>
+    <main>
+      <!-- Hero Section -->
+      <section class="relative h-[85vh] w-full overflow-hidden">
+        <div
+          class="absolute inset-0 bg-cover bg-center"
+          data-alt="Modern high-impact architectural glass building facade"
+          style="
+            background-image:
+              linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)),
+              url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuC2B8edVCnqtrb4t2Mm8TPCt06Fhq72BAY07U50BmiWijG4DcpEQnUIy7WpL9dhou-b7hJMTMSgux9stlwH8hIPnXQNIt8Kdhwc7FptLzwBAo8OfCLk1yh7xNbeScVRyNv6WC2yYpU2OIxmIizMolSgOY6b6B_K7hmC-DxRIbdDROneo6I4YfS1ja6rnkmkDG2wrejOa6-x1vJ4UVyCnJJ3AsG6436wxE7clga4OdtYnmDNDPGYyxoS5gQN_HNTL3-XKFwORrBYLrGr&quot;);
+          "
+        ></div>
+        <div
+          class="relative h-full flex flex-col items-center justify-center text-center px-4 max-w-[960px] mx-auto"
+        >
+          <span
+            class="bg-primary/90 text-white text-xs font-bold uppercase tracking-[0.2em] px-4 py-1 rounded mb-6"
+            >Established 30+ Years Ago</span
+          >
+          <h1
+            class="text-white text-5xl md:text-7xl font-black leading-tight tracking-tighter mb-6"
+          >
+            Shaaban Trends Consults Limited
+          </h1>
+          <p
+            class="text-white/90 text-lg md:text-xl font-medium max-w-2xl mb-10 leading-relaxed"
+          >
+            Three Decades of Architectural Excellence, Innovation, and
+            Structural Integrity. We build the future with precision.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <button
+              class="bg-primary hover:bg-red-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all"
+            >
+              View Our Projects
+            </button>
+            <button
+              class="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white border border-white/30 px-8 py-4 rounded-lg font-bold text-lg transition-all"
+            >
+              Our Services
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- About Section -->
+      <section
+        class="py-20 px-4 md:px-10 lg:px-40 bg-white dark:bg-background-dark"
+        id="about"
+      >
+        <div
+          class="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+        >
+          <div class="relative">
+            <div class="aspect-square rounded-2xl overflow-hidden shadow-2xl">
+              <img
+                alt="Architectural blueprint and site planning"
+                class="w-full h-full object-cover"
+                data-alt="Architectural blueprint and urban site planning tools"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcH8dJ6oktwK7Q7OWSoDv2HcLB8IAMeYoh511qhlIico68gAqQ-lCPoXvBeajZtsucxzs6AcoKHIAL3kN4JjWUhFvT4YBJlAuVHhkAdt-Rc3e4IcaD1yVHx0cfW9dPreoqsgxDw49z49awnoByMNHDVPr8VroNXq4Ks5x7dLgaADC758J9Ggcr4fe0SkiR4fARZNbq2CwJIHBa5WInrqd9P9QjRlrgiRkURMRAiOUrkwmzWFSHgvtUzlD7CeiTqpTTKmKNk8Ybxd2J"
+              />
+            </div>
+            <div
+              class="absolute -bottom-6 -right-6 bg-primary p-8 rounded-xl text-white hidden md:block"
+            >
+              <p class="text-4xl font-black">30+</p>
+              <p
+                class="text-sm font-medium uppercase tracking-widest opacity-80"
+              >
+                Years Experience
+              </p>
+            </div>
+          </div>
+          <div class="flex flex-col gap-6">
+            <h2
+              class="text-primary text-sm font-bold uppercase tracking-[0.2em]"
+            >
+              Our Legacy
+            </h2>
+            <h3
+              class="text-slate-900 dark:text-slate-100 text-4xl md:text-5xl font-black leading-tight"
+            >
+              About Our Firm
+            </h3>
+            <p
+              class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed"
+            >
+              The firm is an up shoot of a consortium registered over three
+              decades ago. This Architectural firm has been the arm in charge of
+              various designs, projects monitoring, supervisions and contract
+              Executions for individuals, commercials, industrials, Educational,
+              hospitalities and government agencies.
+            </p>
+            <div class="grid grid-cols-2 gap-6 mt-4">
+              <div class="flex flex-col gap-2">
+                <span class="material-symbols-outlined text-primary text-3xl"
+                  >verified</span
+                >
+                <h4 class="font-bold text-slate-900 dark:text-slate-100">
+                  Expert Supervision
+                </h4>
+                <p class="text-sm text-slate-500">
+                  Rigorous monitoring and precise execution of every project.
+                </p>
+              </div>
+              <div class="flex flex-col gap-2">
+                <span class="material-symbols-outlined text-primary text-3xl"
+                  >groups</span
+                >
+                <h4 class="font-bold text-slate-900 dark:text-slate-100">
+                  Diverse Portfolio
+                </h4>
+                <p class="text-sm text-slate-500">
+                  Serving private, commercial, and government sectors with
+                  distinction.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Services Section -->
+      <section
+        class="py-20 px-4 md:px-10 lg:px-40 bg-background-light dark:bg-slate-900/50"
+        id="services"
+      >
+        <div class="max-w-[1280px] mx-auto">
+          <div class="text-center mb-16">
+            <h2
+              class="text-primary text-sm font-bold uppercase tracking-[0.2em] mb-4"
+            >
+              What We Do
+            </h2>
+            <h3 class="text-slate-900 dark:text-slate-100 text-4xl font-black">
+              Our Core Services
+            </h3>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Service Card 1 -->
+            <div
+              class="group bg-white dark:bg-background-dark p-8 rounded-xl border border-primary/5 hover:border-primary/20 transition-all hover:shadow-xl"
+            >
+              <div
+                class="size-14 bg-primary/10 text-primary rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all"
+              >
+                <span class="material-symbols-outlined text-3xl"
+                  >architecture</span
+                >
+              </div>
+              <h4 class="text-xl font-bold mb-3 dark:text-white">
+                Architectural Design
+              </h4>
+              <p
+                class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed"
+              >
+                Innovative design solutions across all sectors, blending
+                aesthetics with functionality.
+              </p>
+            </div>
+            <!-- Service Card 2 -->
+            <div
+              class="group bg-white dark:bg-background-dark p-8 rounded-xl border border-primary/5 hover:border-primary/20 transition-all hover:shadow-xl"
+            >
+              <div
+                class="size-14 bg-primary/10 text-primary rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all"
+              >
+                <span class="material-symbols-outlined text-3xl"
+                  >construction</span
+                >
+              </div>
+              <h4 class="text-xl font-bold mb-3 dark:text-white">
+                Construction
+              </h4>
+              <p
+                class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed"
+              >
+                Quality contract executions, project monitoring, and end-to-end
+                building management.
+              </p>
+            </div>
+            <!-- Service Card 3 -->
+            <div
+              class="group bg-white dark:bg-background-dark p-8 rounded-xl border border-primary/5 hover:border-primary/20 transition-all hover:shadow-xl"
+            >
+              <div
+                class="size-14 bg-primary/10 text-primary rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all"
+              >
+                <span class="material-symbols-outlined text-3xl">park</span>
+              </div>
+              <h4 class="text-xl font-bold mb-3 dark:text-white">
+                Landscape Architecture
+              </h4>
+              <p
+                class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed"
+              >
+                Urban planning and creative landscaping to enhance outdoor
+                living and cityscapes.
+              </p>
+            </div>
+            <!-- Service Card 4 -->
+            <div
+              class="group bg-white dark:bg-background-dark p-8 rounded-xl border border-primary/5 hover:border-primary/20 transition-all hover:shadow-xl"
+            >
+              <div
+                class="size-14 bg-primary/10 text-primary rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all"
+              >
+                <span class="material-symbols-outlined text-3xl">chair</span>
+              </div>
+              <h4 class="text-xl font-bold mb-3 dark:text-white">
+                Interior Decoration
+              </h4>
+              <p
+                class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed"
+              >
+                High-end interior styling, finishings, and bespoke furniture
+                arrangements.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Featured Projects Gallery -->
+      <section
+        class="py-20 px-4 md:px-10 lg:px-40 bg-white dark:bg-background-dark"
+        id="portfolio"
+      >
+        <div class="max-w-[1280px] mx-auto">
+          <div
+            class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6"
+          >
+            <div>
+              <h2
+                class="text-primary text-sm font-bold uppercase tracking-[0.2em] mb-4"
+              >
+                Our Portfolio
+              </h2>
+              <h3
+                class="text-slate-900 dark:text-slate-100 text-4xl font-black"
+              >
+                Featured Projects
+              </h3>
+            </div>
+            <button
+              class="text-primary font-bold flex items-center gap-2 hover:gap-3 transition-all"
+            >
+              View All Work
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </button>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Project 1: Private Design -->
+            <div class="group relative overflow-hidden rounded-2xl h-[400px]">
+              <img
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                data-alt="Luxury private residential villa design in Ajah Lagos"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBmuP44HDYrCopXUEjKnlvpiIbWBCUj7AaIjGabSmylcQ-BRIRcgxXghjWt5U49cyGzk6ffcrEeH8-DcdvlGB612cCKYEy5cXuKRVELzb7jhqq2l1B1l-AVTeEijxWaIwumx0UWo4VJYrAOyU0yM4TU52RqQLAOs36o2P9R7z91T65nBZURQFyuSw3lziwYUxCpqPg4pS0Cp6FzA7m2Oh97-BLg3Wb27N5wkTAUWggBzoN6eZS2St1ZkBjsFOnwBhkV5rqvPXV3W7G"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-8 flex flex-col justify-end"
+              >
+                <span
+                  class="text-primary text-xs font-bold uppercase tracking-widest mb-2"
+                  >Residential</span
+                >
+                <h4 class="text-white text-2xl font-bold">
+                  Private Designs @ Ajah, Lagos
+                </h4>
+                <p
+                  class="text-white/70 text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                  Custom luxury housing tailored to individual lifestyle and
+                  comfort.
+                </p>
+              </div>
+            </div>
+            <!-- Project 2: Commercial -->
+            <div class="group relative overflow-hidden rounded-2xl h-[400px]">
+              <img
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                data-alt="Modern corporate office interior and commercial building"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCr0PSmraYMCfqc9CNcSYTZe8INlsa0QhclT2pK7kU-6rUS3NzbmNnRp8eEvWdEBkqczJ9xUtrtdkCI4Tp5AGLl_7HeJ2_3CimWWx9yaSrNtujXIaHl5VaNQpk9iUW5aQoA5HcRKuV75JipVic9ldX7A0vNsTApo4inchjDT472wcOYglZqZvOTbJkThe5_b3Gy-IiHrdM3PUnBetPZ0hmRHemOHqo26IeziC1Skivh_RWnUTvUW3m3IwstLhTwe4M-AgjlY-k3s5uL"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-8 flex flex-col justify-end"
+              >
+                <span
+                  class="text-primary text-xs font-bold uppercase tracking-widest mb-2"
+                  >Commercial</span
+                >
+                <h4 class="text-white text-2xl font-bold">
+                  Private and Corporate Organizations
+                </h4>
+                <p
+                  class="text-white/70 text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                  Dynamic office spaces and commercial hubs for modern
+                  businesses.
+                </p>
+              </div>
+            </div>
+            <!-- Project 3: Institutional Large Card -->
+            <div
+              class="md:col-span-2 group relative overflow-hidden rounded-2xl h-[500px]"
+            >
+              <img
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                data-alt="Large scale millennium secondary school building for government"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuALXrsptK2sMciIfcuPfDSF_S5DRIsLxZvxQdAhYd9m6hZuHhJRh2ATspNmpFiGsNNeCwwweqTGaXBcfpnG_o1muZ7j6Ngsz7afztSkx79ACKKpZs88OBsDbqnnCHdZlTBqWu3_hCmf1hYBSPkLixdmg16zAai551iHc6lEPVfjWITlegkt_c2DZragGLDKDAyRDj_KTznoAjAxKoFY6ZVXlmMhvygPKvs9icA0ZyyaRiKSQMZizbsyrIIdBU08mnAr6CFJ4RRlvICa"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-10 flex flex-col justify-end"
+              >
+                <span
+                  class="text-primary text-xs font-bold uppercase tracking-widest mb-2"
+                  >Institutional / Government</span
+                >
+                <h4 class="text-white text-3xl font-black">
+                  Millennium Secondary School
+                </h4>
+                <p class="text-white/80 text-lg mt-3 max-w-2xl">
+                  A flagship institutional project for the Oyo State Government,
+                  showcasing large-scale educational infrastructure expertise.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Philosophy Section -->
+      <section
+        class="py-20 px-4 md:px-10 lg:px-40 bg-primary text-white overflow-hidden relative"
+      >
+        <div class="absolute top-0 right-0 opacity-10">
+          <span class="material-symbols-outlined text-[300px]"
+            >architecture</span
+          >
+        </div>
+        <div class="max-w-[1280px] mx-auto relative z-10">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2
+                class="text-white/80 text-sm font-bold uppercase tracking-[0.2em] mb-6 italic"
+              >
+                Our Philosophy
+              </h2>
+              <h3 class="text-4xl md:text-5xl font-black leading-tight mb-8">
+                Creative, Efficient and Safest Working Experiences
+              </h3>
+              <p
+                class="text-xl text-white/90 leading-relaxed font-medium border-l-4 border-white/30 pl-6"
+              >
+                "We believe in creating structures that stand the test of time,
+                prioritizing safety and functional efficiency without
+                compromising on creative vision."
+              </p>
+            </div>
+            <div
+              class="bg-white/10 backdrop-blur-md p-10 rounded-2xl border border-white/20"
+            >
+              <h4 class="text-2xl font-bold mb-6">Expertise &amp; Vision</h4>
+              <ul class="flex flex-col gap-6">
+                <li class="flex">
+                  <a
+                    href="services.html#landscape-architecture"
+                    class="flex gap-4 group w-full"
+                  >
+                    <span
+                      class="material-symbols-outlined bg-white text-primary p-1 rounded-full text-lg self-start group-hover:scale-110 transition-transform"
+                      >check</span
+                    >
+                    <div>
+                      <p
+                        class="font-bold text-lg group-hover:text-white transition-colors"
+                      >
+                        Urban Planning
+                      </p>
+                      <p class="text-white/80 text-sm">
+                        Strategic city-scale design and layout planning.
+                      </p>
+                    </div>
+                  </a>
+                </li>
+                <li class="flex">
+                  <a
+                    href="services.html#landscape-architecture"
+                    class="flex gap-4 group w-full"
+                  >
+                    <span
+                      class="material-symbols-outlined bg-white text-primary p-1 rounded-full text-lg self-start group-hover:scale-110 transition-transform"
+                      >check</span
+                    >
+                    <div>
+                      <p
+                        class="font-bold text-lg group-hover:text-white transition-colors"
+                      >
+                        Creative Landscaping
+                      </p>
+                      <p class="text-white/80 text-sm">
+                        Harmonizing nature with built environments.
+                      </p>
+                    </div>
+                  </a>
+                </li>
+                <li class="flex">
+                  <a
+                    href="projects.html#commercial"
+                    class="flex gap-4 group w-full"
+                  >
+                    <span
+                      class="material-symbols-outlined bg-white text-primary p-1 rounded-full text-lg self-start group-hover:scale-110 transition-transform"
+                      >check</span
+                    >
+                    <div>
+                      <p
+                        class="font-bold text-lg group-hover:text-white transition-colors"
+                      >
+                        Cityscape Expertise
+                      </p>
+                      <p class="text-white/80 text-sm">
+                        Developing iconic landmarks and urban skylines.
+                      </p>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- CTA Section -->
+      <section
+        class="py-20 px-4 md:px-10 lg:px-40 bg-white dark:bg-background-dark"
+        id="contact"
+      >
+        <div
+          class="max-w-[1280px] mx-auto bg-slate-900 rounded-3xl p-10 md:p-20 text-center relative overflow-hidden"
+        >
+          <div
+            class="absolute inset-0 opacity-20 bg-cover bg-center"
+            data-alt="Architecture design sketch overlay on construction site"
+            style="
+              background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuA6MorpmJJbdzQ-wirn1xe2S5qpEvhj0c5rJbGvBq0iLvfyHEkCfowSBgs4UbP9mFZstempfgmS2GqFCSKMcd7gat2XGBjAEZMB2NxpWuvADRA6a6EkVrpHgYsgW6xJ8VZ4l40G1Vy78Y5kZFLIPWrSsZmAp3HRetQYjlHoi2U9gm2Lw1aNH0_R20qm8FgSekpLFlkrZoUGqpZETeXE_gi3dB2IdSQPDVsf7sxQXtVBGbYCoUFOY1zk7F_xjFgXIXZbHHP3nZqpeSOq&quot;);
+            "
+          ></div>
+          <div class="relative z-10">
+            <h2 class="text-white text-4xl md:text-5xl font-black mb-6">
+              Ready to Start Your Next Project?
+            </h2>
+            <p class="text-white/70 text-lg mb-10 max-w-2xl mx-auto">
+              Whether it's a private residence, a commercial hub, or a
+              large-scale institutional building, we have the expertise to bring
+              your vision to life.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <button
+                class="bg-primary hover:bg-red-700 text-white px-10 py-4 rounded-lg font-bold text-lg shadow-xl shadow-primary/20 transition-all"
+              >
+                Get a Free Quote
+              </button>
+              <button
+                class="bg-transparent border border-white/30 hover:bg-white/10 text-white px-10 py-4 rounded-lg font-bold text-lg transition-all"
+              >
+                Contact Us
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer
+      class="bg-background-light dark:bg-background-dark py-12 px-4 md:px-10 lg:px-40 border-t border-slate-200 dark:border-slate-800"
+    >
+      <div
+        class="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12"
+      >
+        <div class="col-span-1 lg:col-span-1">
+          <div class="flex items-center gap-3 mb-6">
+            <img
+              src="images/favicon.jpg"
+              alt="STC"
+              class="h-10 w-10 rounded shadow-sm"
+            />
+            <h2
+              class="text-slate-900 dark:text-slate-100 text-lg font-extrabold leading-tight"
+            >
+              Shaaban Trends
+            </h2>
+          </div>
+          <p class="text-slate-500 text-sm leading-relaxed mb-6">
+            Delivering architectural excellence and innovation for over 30
+            years. From initial design to final execution.
+          </p>
+        </div>
+        <div>
+          <a href="index.html" class="hover:text-primary transition-colors">
+            <h4 class="font-bold mb-6 text-slate-900 dark:text-slate-100">
+              Quick Links
+            </h4>
+          </a>
+          <ul class="flex flex-col gap-4 text-sm text-slate-500">
+            <li>
+              <a class="hover:text-primary transition-colors" href="index.html"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a class="hover:text-primary transition-colors" href="about.html"
+                >About Firm</a
+              >
+            </li>
+            <li>
+              <a
+                class="hover:text-primary transition-colors"
+                href="services.html"
+                >Our Services</a
+              >
+            </li>
+            <li>
+              <a
+                class="hover:text-primary transition-colors"
+                href="projects.html"
+                >Portfolio</a
+              >
+            </li>
+            <li>
+              <a
+                class="hover:text-primary transition-colors"
+                href="contact.html"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold mb-6 text-slate-900 dark:text-slate-100">
+            Services
+          </h4>
+          <ul class="flex flex-col gap-4 text-sm text-slate-500">
+            <li>
+              <a
+                href="services.html#architectural-design"
+                class="hover:text-primary transition-colors"
+                >Architectural Design</a
+              >
+            </li>
+            <li>
+              <a
+                href="services.html#project-supervision"
+                class="hover:text-primary transition-colors"
+                >Construction &amp; Supervision</a
+              >
+            </li>
+            <li>
+              <a
+                href="services.html#landscape-architecture"
+                class="hover:text-primary transition-colors"
+                >Landscape Architecture</a
+              >
+            </li>
+            <li>
+              <a
+                href="services.html#interior-decoration"
+                class="hover:text-primary transition-colors"
+                >Interior Decoration</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <a
+            href="https://www.google.com/maps/search/Shaaban+Trends+Consults+Limited+Ibadan+Nigeria"
+            target="_blank"
+            class="group block"
+          >
+            <h4
+              class="font-bold mb-6 text-slate-900 dark:text-slate-100 group-hover:text-primary transition-colors"
+            >
+              Location
+            </h4>
+            <div
+              class="flex items-start gap-3 text-sm text-slate-500 group-hover:text-primary transition-all"
+            >
+              <span
+                class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform"
+                >location_on</span
+              >
+              <p class="group-hover:translate-x-1 transition-transform">
+                Headquarters Operations,<br />Ibadan, Nigeria
+              </p>
+            </div>
+          </a>
+          <div class="mt-6 flex items-center gap-4">
+            <a
+              class="size-10 bg-slate-200 dark:bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-lg">language</span>
+            </a>
+            <a
+              class="size-10 bg-slate-200 dark:bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-lg">mail</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="max-w-[1280px] mx-auto mt-12 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6"
+      >
+        <p class="text-xs text-slate-400">
+          © 2024 Shaaban Trends Consults Limited. All Rights Reserved.
+        </p>
+        <div class="flex gap-8 text-xs text-slate-400">
+          <a class="hover:text-primary" href="#">Privacy Policy</a>
+          <a class="hover:text-primary" href="#">Terms of Service</a>
+        </div>
+      </div>
+      <script>
+        const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+        const closeMenuBtn = document.getElementById("close-menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        if (mobileMenuBtn && closeMenuBtn && mobileMenu) {
+          mobileMenuBtn.addEventListener("click", () => {
+            mobileMenu.classList.remove("translate-x-full");
+          });
+
+          closeMenuBtn.addEventListener("click", () => {
+            mobileMenu.classList.add("translate-x-full");
+          });
+
+          // Close menu when clicking on a link
+          const mobileLinks = mobileMenu.querySelectorAll("nav a");
+          mobileLinks.forEach((link) => {
+            link.addEventListener("click", () => {
+              mobileMenu.classList.add("translate-x-full");
+            });
+          });
+        }
+      </script>
+    </footer>
+  </body>
+</html>
