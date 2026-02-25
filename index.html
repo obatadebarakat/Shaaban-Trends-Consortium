@@ -175,15 +175,41 @@
     <main>
       <!-- Hero Section -->
       <section class="relative h-[85vh] w-full overflow-hidden">
-        <div
-          class="absolute inset-0 bg-cover bg-center"
-          data-alt="Modern high-impact architectural glass building facade"
-          style="
-            background-image:
-              linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)),
-              url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuC2B8edVCnqtrb4t2Mm8TPCt06Fhq72BAY07U50BmiWijG4DcpEQnUIy7WpL9dhou-b7hJMTMSgux9stlwH8hIPnXQNIt8Kdhwc7FptLzwBAo8OfCLk1yh7xNbeScVRyNv6WC2yYpU2OIxmIizMolSgOY6b6B_K7hmC-DxRIbdDROneo6I4YfS1ja6rnkmkDG2wrejOa6-x1vJ4UVyCnJJ3AsG6436wxE7clga4OdtYnmDNDPGYyxoS5gQN_HNTL3-XKFwORrBYLrGr&quot;);
-          "
-        ></div>
+        <!-- Hero Slider / Background Gallery -->
+        <div id="hero-slider" class="absolute inset-0 z-0">
+          <div
+            class="hero-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-100"
+            style="
+              background-image:
+                linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)),
+                url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuC2B8edVCnqtrb4t2Mm8TPCt06Fhq72BAY07U50BmiWijG4DcpEQnUIy7WpL9dhou-b7hJMTMSgux9stlwH8hIPnXQNIt8Kdhwc7FptLzwBAo8OfCLk1yh7xNbeScVRyNv6WC2yYpU2OIxmIizMolSgOY6b6B_K7hmC-DxRIbdDROneo6I4YfS1ja6rnkmkDG2wrejOa6-x1vJ4UVyCnJJ3AsG6436wxE7clga4OdtYnmDNDPGYyxoS5gQN_HNTL3-XKFwORrBYLrGr&quot;);
+            "
+          ></div>
+          <div
+            class="hero-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0"
+            style="
+              background-image:
+                linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)),
+                url(&quot;images/proj12.jpg&quot;);
+            "
+          ></div>
+          <div
+            class="hero-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0"
+            style="
+              background-image:
+                linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)),
+                url(&quot;images/proj2.jpg&quot;);
+            "
+          ></div>
+          <div
+            class="hero-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0"
+            style="
+              background-image:
+                linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)),
+                url(&quot;images/project-commercial.jpg&quot;);
+            "
+          ></div>
+        </div>
         <div
           class="relative h-full flex flex-col items-center justify-center text-center px-4 max-w-[960px] mx-auto"
         >
@@ -626,11 +652,6 @@
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
               <button
-                class="bg-primary hover:bg-red-700 text-white px-10 py-4 rounded-lg font-bold text-lg shadow-xl shadow-primary/20 transition-all"
-              >
-                Get a Free Quote
-              </button>
-              <button
                 class="bg-transparent border border-white/30 hover:bg-white/10 text-white px-10 py-4 rounded-lg font-bold text-lg transition-all"
               >
                 Contact Us
@@ -811,6 +832,21 @@
               mobileMenu.classList.add("translate-x-full");
             });
           });
+        }
+
+        // Hero Slider Logic
+        const slides = document.querySelectorAll(".hero-slide");
+        let currentSlide = 0;
+
+        function nextSlide() {
+          if (slides.length < 2) return;
+          slides[currentSlide].classList.replace("opacity-100", "opacity-0");
+          currentSlide = (currentSlide + 1) % slides.length;
+          slides[currentSlide].classList.replace("opacity-0", "opacity-100");
+        }
+
+        if (slides.length > 1) {
+          setInterval(nextSlide, 5000);
         }
       </script>
     </footer>
