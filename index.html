@@ -443,12 +443,13 @@
                 Featured Projects
               </h3>
             </div>
-            <button
+            <a
+              href="projects.html"
               class="text-primary font-bold flex items-center gap-2 hover:gap-3 transition-all"
             >
               View All Work
               <span class="material-symbols-outlined">arrow_forward</span>
-            </button>
+            </a>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <!-- Project 1: Private Design -->
@@ -741,6 +742,25 @@
                     Send Message
                   </button>
                 </form>
+                <!-- Success Message -->
+                <div
+                  id="form-success"
+                  class="hidden flex flex-col items-center justify-center text-center p-4 animate-in fade-in zoom-in duration-500"
+                >
+                  <div
+                    class="size-16 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center mb-4"
+                  >
+                    <span class="material-symbols-outlined text-4xl"
+                      >check_circle</span
+                    >
+                  </div>
+                  <h3 class="text-white text-2xl font-bold mb-2">
+                    Message Sent!
+                  </h3>
+                  <p class="text-white/60">
+                    Thank you for your inquiry. We will get back to you shortly.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -936,28 +956,40 @@
         }
 
         const indexContactForm = document.getElementById("index-contact-form");
+        const formSuccess = document.getElementById("form-success");
+
         if (indexContactForm) {
           indexContactForm.addEventListener("submit", function (e) {
             e.preventDefault();
             const btn = this.querySelector("button[type=submit]");
             const originalContent = btn.innerHTML;
+            const inputs = this.querySelectorAll("input, textarea");
+
+            // Disable form
             btn.innerHTML =
               '<span class="flex items-center justify-center gap-2"><span class="material-symbols-outlined text-lg animate-spin">progress_activity</span>Sending...</span>';
             btn.disabled = true;
+            inputs.forEach((input) => (input.disabled = true));
 
+            // Simulate sending
             setTimeout(function () {
-              btn.innerHTML =
-                '<span class="flex items-center justify-center gap-2"><span class="material-symbols-outlined text-lg">check_circle</span>Message Sent!</span>';
-              btn.classList.replace("bg-primary", "bg-green-600");
-              btn.classList.remove("hover:bg-red-700");
+              // Hide form and show success message
+              indexContactForm.classList.add("hidden");
+              formSuccess.classList.remove("hidden");
 
               setTimeout(function () {
+                // Reset everything after 5 seconds
+                formSuccess.classList.add("hidden");
+                indexContactForm.classList.remove("hidden");
+
                 btn.innerHTML = originalContent;
                 btn.disabled = false;
-                btn.classList.replace("bg-green-600", "bg-primary");
-                btn.classList.add("hover:bg-red-700");
+                inputs.forEach((input) => {
+                  input.disabled = false;
+                  input.value = "";
+                });
                 indexContactForm.reset();
-              }, 3000);
+              }, 5000);
             }, 1500);
           });
         }
